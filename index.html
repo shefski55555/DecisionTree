@@ -51,8 +51,13 @@
 
 		</div> -->
 
-		
-		<button style="grid-area:CardL"></button>
+		<div class="title" id="title">I am a Title</div>
+		<p class="title" id="question"></p>
+		<div id="start" class="start"><button id="btnStart" class="btnStart" onclick=start()>Start</button></div>
+		<button id="ansYes" class="btnYes" onclick="answer('yes')" hidden></button>
+		<button id="ansNo" class="btnNo" onclick="answer('no')" hidden></button>
+		<div id="result" class="resultCard" hidden><h3 id="resultTitle">I think you should use</h3><p id="resultText">Elephatns</p></div>
+		<div id="restart" class="restart"><button id="btnRestart" class="btnRestart" onclick="history.go(0)" hidden>Restart</button></div>
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
