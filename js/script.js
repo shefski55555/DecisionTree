@@ -10,13 +10,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 
 
 
-
+var score = 0;
 var step = 0;
 var questions = [];
 var result = 0;
 var numberqs = 0
 var answers = [];
 var talk = [];
+var responsesYes = [];
+var responsesNo = [];
 var teams = [];
 
 questions['ita'] = [
@@ -25,19 +27,42 @@ questions['ita'] = [
 
 questions['eng'] = [
 	'',
-	'Are you making a change to the Database',
+	'Reason for demand?',
+	'How would you prefer this delivered?',
+	'Who can carry out the work and who decides?',
+    '<h1>What level of control is required?</h1><br>Who Decides what work is done?<br>Who Decides How the work is delivered?<br>Who has control over changing what work is done?',
+	'<h1>Is supervision required?</h1><br>Is work under constant review or does the eview take place when the agreed output is delivered?<br>Is the indicidual self reliant or are they being mentored / Developed?',
+	'<h1>Do they need direction?</h1><br>Is specific instruction provided on how the work is delivered or does the individual determine how to deliver the outcome?<br>Is client coordingating how the work is being done as it is undertaken?',
+	'How will they be paid?',
+];
+
+responsesYes['yesAnswers'] = [
+	'',
+	'A clear project with a defined outcome\nDefined milestones to be met by Rullion',
 	'Are you making a change that effects the sales process',
 	'Does your change require form changes',
     'Does you change have anything to do with web leads',
+	'',
+	'',
+	'',
+	
+];
+
+responsesNo['noAnswers'] = [
+	'',
+	'Reason for demand?',
+	'Are you making a change that effects the sales process',
+	'Does your change require form changes',
+    'Does you change have anything to do with web leads',
+	'',
+	'',
+	'',
 	
 ];
 
 answers = [
-    '',
-    'DBA',
-    'Sales',
-    'Biz Ops',
-    'Sales',
+    'Rullion Change Delivery',
+	'Recruitment',
 ];
 
 function getLang() {
@@ -52,8 +77,9 @@ function getLang() {
 
 function answer(res) {
 	if (res == 'yes') {
-        talk.push(answers[step]);
+        score = score + 1;
         next();
+		//talk.push(answers[step]);
 		//$('#buttons-box').hide();
 		//$('#drop-msg').show();
 		//$('#share-button').show();
@@ -70,9 +96,15 @@ function next() {
 	if (step == numberqs) {
 		result = 1;
         
-        teams = talk.join('</br>');
-
-        document.getElementById("talk-teams").innerHTML = teams;
+        //teams = talk.join('</br>');
+		if(score > 3){
+			document.getElementById("talk-teams").innerHTML = answers[0];
+		}
+		else{
+			document.getElementById("talk-teams").innerHTML = answers[1];
+		}
+		
+        
         $('#step').hide();
         $('#question').hide();
 		$('#buttons-box').hide();
@@ -85,7 +117,9 @@ function next() {
 		step++;
         
 		$('#step').html(step  * numberqs / numberqs);
-		$('#question').html(questions[getLang()][step] + '?');
+		document.getElementById("ansYes").innerText = responsesYes['yesAnswers'][step];
+		document.getElementById("ansNo").innerText = responsesNo['noAnswers'][step];
+		$('#question').html(questions['eng'][step]);
 	}
 }
 
