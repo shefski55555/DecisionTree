@@ -1,30 +1,138 @@
 html, body {
 	height: 100%;
 }
-
+.title{
+	text-align: center;
+	grid-area: Title;
+}
 .btnYes{
 	white-space: normal;
-	height: 100px;
-	width: 100px;
+	grid-area: CardL;
 	background-color: #354c8c;
+	border-radius: 1em;
+	aspect-ratio: 1/1;
 }
-.btnYes :hover{
+.btnYes:hover{
 	background-color: aqua;
 }
-
+.btnNo{
+	white-space: normal;
+	grid-area: CardR;
+	background-color:aquamarine;
+	border-radius: 1em;
+	aspect-ratio: 1/1;
+}
+.btnNo:hover{
+	background-color: blue;
+}
+.start{
+	display: flex;
+	border-radius: 1em;
+	grid-column-start: 2;
+	grid-row-start: 2;
+	grid-column-end: 5;
+	grid-row-end: 3;
+	height: 100px;
+	width: 100%;
+	border-radius: 1em;
+	justify-content: center;
+	align-items: center;
+}
+.btnStart{
+	border-radius: 1em;
+	justify-content: center;
+	align-self: center;
+	height: 100%;
+	width: 60%;
+	margin: 0 auto;
+}
+.btnStart:hover{
+	background-color: #b2c2d1;
+}
+.btnRestart{
+	border-radius: 1em;
+	justify-content: center;
+	align-self: center;
+	height: 100%;
+	width: 60%;
+	margin: 0 auto;
+}
+.btnRestart:hover{
+	background-color: #b2c2d1;
+}
+.restart{
+	display: flex;
+	grid-area: Restart;
+	border-radius: 1em;
+	grid-column-start: 2;
+	grid-row-start: 3;
+	grid-column-end: 5;
+	grid-row-end: 4;
+	height: 100px;
+	width: 100%;
+	border-radius: 1em;
+	justify-content: center;
+	align-items: center;
+}
+.title > p {
+	font-size: small;
+}
+.resultCard{
+	border-radius: 1em;
+	background-color: coral;
+	grid-column-start: 2;
+	grid-row-start: 2;
+	grid-column-end: 5;
+	grid-row-end: 3;
+	text-align: center;
+	justify-content: center;
+	font-size: large;
+}
 .layout-main{
 	display: grid;
-	width: 80%;
 	grid-gap: 1em;
-	grid-template-rows:"1fr, 2fr, 1fr, 2fr, 1fr";
-	grid-template-columns:"1fr,1fr,1fr,1fr";
+	height: 100%;
+	grid-template-rows:1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns:1fr 1fr 0.5fr 1fr 1fr;
 	grid-template-areas:
-	"BorderL, Title, Title, Title, BorderR"
-	"BorderL, CardL, Buffer, CardR, BorderR"
-	"BorderL, CardL, Buffer, CardR, BorderR"
-	"BorderL, Footer, Footer, Footer, BorderR";
+	"BorderL Title Title Title BorderR"
+	"BorderL CardL Start CardR BorderR"
+	"BorderL . Restart . BorderR"
+	"BorderL Footer Footer Footer BorderR";
 }
 
+.title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 50px;
+	text-shadow: 3px 3px 7px #b2c2d1;
+	margin-top: 1em;
+}
+
+@media only screen and (max-width:640px){
+	.layout-main{
+		display: grid;
+		grid-gap: 1em;
+		height: 100%;
+		grid-template-rows:0.2fr 1fr 1fr 1fr 0.2fr;
+		grid-template-columns:0.2fr 1fr 0.2fr 1fr 0.2fr;
+		grid-template-areas:
+		"BorderL Title Title Title BorderR"
+		"BorderL CardL Start CardR BorderR"
+		"BorderL . Restart . BorderR"
+		"BorderL Footer Footer Footer BorderR";
+	}
+	.title {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: bold;
+		font-size: 25px;
+		text-shadow: 3px 3px 7px #b2c2d1;
+		margin-top: 1em;
+	}
+}
+
+
+/* 
 #question-box {
 	display: none;
 	padding-bottom: 50px;
@@ -66,12 +174,7 @@ html, body {
 	margin-right: auto;
 }
 
-.title {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
-	font-size: 50px;
-	text-shadow: 3px 3px 7px #b2c2d1;
-}
+
 
 .twitter-share-button {
 	position: absolute;
@@ -100,4 +203,4 @@ html, body {
 
 #share-box{
     padding-left: 15px;
-}
+} */
