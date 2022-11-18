@@ -2,6 +2,29 @@ html, body {
 	height: 100%;
 }
 
+.btnYes{
+	white-space: normal;
+	height: 100px;
+	width: 100px;
+	background-color: #354c8c;
+}
+.btnYes :hover{
+	background-color: aqua;
+}
+
+.layout-main{
+	display: grid;
+	width: 80%;
+	grid-gap: 1em;
+	grid-template-rows:"1fr, 2fr, 1fr, 2fr, 1fr";
+	grid-template-columns:"1fr,1fr,1fr,1fr";
+	grid-template-areas:
+	"BorderL, Title, Title, Title, BorderR"
+	"BorderL, CardL, Buffer, CardR, BorderR"
+	"BorderL, CardL, Buffer, CardR, BorderR"
+	"BorderL, Footer, Footer, Footer, BorderR";
+}
+
 #question-box {
 	display: none;
 	padding-bottom: 50px;
