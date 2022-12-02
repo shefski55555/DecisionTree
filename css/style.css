@@ -1,206 +1,162 @@
-html, body {
-	height: 100%;
+@font-face {
+  font-family: "Gill Sans Std";
+  src: url("fonts/GillSansStd-Light.eot?#iefix") format("embedded-opentype"),
+    url("fonts/GillSansStd-Light.woff2") format("woff2"),
+    url("fonts/GillSansStd-Light.woff") format("woff"),
+    url("fonts/GillSansStd-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
-.title{
-	text-align: center;
-	grid-area: Title;
+
+html,
+body {
+  height: 100%;
+  font-family: "Gill Sans Std";
 }
-.btnYes{
-	white-space: normal;
-	grid-area: CardL;
-	background-color: #354c8c;
-	border-radius: 1em;
-	aspect-ratio: 1/1;
+.title {
+  text-align: center;
+  grid-area: Title;
+  font-size: 18px;
+  font-family: "League Spartan";
 }
-.btnYes:hover{
-	background-color: aqua;
+.questionDesc {
+  text-align: center;
+  font-size: 16px;
+  list-style-position: inside;
 }
-.btnNo{
-	white-space: normal;
-	grid-area: CardR;
-	background-color:aquamarine;
-	border-radius: 1em;
-	aspect-ratio: 1/1;
+
+.btnYes {
+  text-align: center;
+  font-family: "Gill Sans Std";
+  font-size: 18px;
+  color: white;
+  white-space: normal;
+  grid-area: CardL;
+  background-color: #54075b;
+  border-radius: 1em;
+  /* aspect-ratio: 1/1; */
+  height: auto;
+  width: auto;
+  /* max-height: 75%; */
+  padding: 0.5em;
 }
-.btnNo:hover{
-	background-color: blue;
+.btnYes:hover {
+  background-color: #3a053f;
 }
-.start{
-	display: flex;
-	border-radius: 1em;
-	grid-column-start: 2;
-	grid-row-start: 2;
-	grid-column-end: 5;
-	grid-row-end: 3;
-	height: 100px;
-	width: 100%;
-	border-radius: 1em;
-	justify-content: center;
-	align-items: center;
+.btnNo {
+  text-align: center;
+  font-family: "Gill Sans Std";
+  font-size: 18px;
+  color: white;
+  white-space: normal;
+  grid-area: CardR;
+  background-color: #54075b;
+  border-radius: 1em;
+  /* aspect-ratio: 1/1; */
+  height: auto;
+  width: auto;
+  /* max-height: 75%; */
+  padding: 0.5em;
 }
-.btnStart{
-	border-radius: 1em;
-	justify-content: center;
-	align-self: center;
-	height: 100%;
-	width: 60%;
-	margin: 0 auto;
+.btnNo:hover {
+  background-color: #3a053f;
 }
-.btnStart:hover{
-	background-color: #b2c2d1;
+.start {
+  display: flex;
+  border-radius: 1em;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-column-end: 5;
+  grid-row-end: 3;
+  height: 100px;
+  width: 100%;
+  border-radius: 1em;
+  justify-content: center;
+  align-items: center;
 }
-.btnRestart{
-	border-radius: 1em;
-	justify-content: center;
-	align-self: center;
-	height: 100%;
-	width: 60%;
-	margin: 0 auto;
+.btnStart {
+  font-weight: bold;
+  font-family: "Gill Sans Std";
+  color: white;
+  font-size: 18px;
+  border-radius: 1em;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #c6359a;
 }
-.btnRestart:hover{
-	background-color: #b2c2d1;
+.btnStart:hover {
+  background-color: #aa2e85;
 }
-.restart{
-	display: flex;
-	grid-area: Restart;
-	border-radius: 1em;
-	grid-column-start: 2;
-	grid-row-start: 3;
-	grid-column-end: 5;
-	grid-row-end: 4;
-	height: 100px;
-	width: 100%;
-	border-radius: 1em;
-	justify-content: center;
-	align-items: center;
+.restart {
+  display: flex;
+  grid-area: Restart;
+  border-radius: 1em;
+  grid-column-start: 2;
+  grid-row-start: 3;
+  grid-column-end: 5;
+  grid-row-end: 4;
+  height: 100px;
+  width: 100%;
+  border-radius: 1em;
+  justify-content: center;
+  align-items: center;
 }
-.title > p {
-	font-size: small;
+.resultCard {
+  border-radius: 1em;
+  color: white;
+  background-color: #3a053f;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-column-end: 5;
+  height: fit-content;
+  padding-bottom: 1em;
+  /* grid-row-end: 3; */
+  font-size: 18px;
+  text-align: center;
 }
-.resultCard{
-	border-radius: 1em;
-	background-color: coral;
-	grid-column-start: 2;
-	grid-row-start: 2;
-	grid-column-end: 5;
-	grid-row-end: 3;
-	text-align: center;
-	justify-content: center;
-	font-size: large;
-}
-.layout-main{
-	display: grid;
-	grid-gap: 1em;
-	height: 100%;
-	grid-template-rows:1fr 1fr 1fr 1fr 1fr;
-	grid-template-columns:1fr 1fr 0.5fr 1fr 1fr;
-	grid-template-areas:
-	"BorderL Title Title Title BorderR"
-	"BorderL CardL Start CardR BorderR"
-	"BorderL . Restart . BorderR"
-	"BorderL Footer Footer Footer BorderR";
+.layout-main {
+  display: grid;
+  grid-gap: 1em;
+  height: 100%;
+  grid-template-rows: auto 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 0.5fr 0.2fr 0.5fr 1fr;
+  grid-template-areas:
+    "BorderL Title Title Title BorderR"
+    "BorderL CardL Start CardR BorderR"
+    "BorderL . Restart . BorderR"
+    "BorderL Footer Footer Footer BorderR";
 }
 
 .title {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
-	font-size: 50px;
-	text-shadow: 3px 3px 7px #b2c2d1;
-	margin-top: 1em;
+  font-family: "League Spartan";
+  font-weight: 300;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 31.5px;
+  margin-top: 1em;
 }
 
-@media only screen and (max-width:640px){
-	.layout-main{
-		display: grid;
-		grid-gap: 1em;
-		height: 100%;
-		grid-template-rows:0.2fr 1fr 1fr 1fr 0.2fr;
-		grid-template-columns:0.2fr 1fr 0.2fr 1fr 0.2fr;
-		grid-template-areas:
-		"BorderL Title Title Title BorderR"
-		"BorderL CardL Start CardR BorderR"
-		"BorderL . Restart . BorderR"
-		"BorderL Footer Footer Footer BorderR";
-	}
-	.title {
-		font-family: 'Open Sans', sans-serif;
-		font-weight: bold;
-		font-size: 25px;
-		text-shadow: 3px 3px 7px #b2c2d1;
-		margin-top: 1em;
-	}
+.centredList {
+  list-style-position: inside;
 }
 
-
-/* 
-#question-box {
-	display: none;
-	padding-bottom: 50px;
+@media only screen and (max-width: 640px) {
+  .layout-main {
+    grid-template-columns: 0.2fr 0.5fr 0.2fr 0.5fr 0.2fr;
+    grid-template-areas:
+      "BorderL Title Title Title BorderR"
+      "BorderL CardL CardL CardL BorderR"
+      "BorderL CardR CardR CardR BorderR"
+      "BorderL . Restart . BorderR"
+      "BorderL Footer Footer Footer BorderR";
+  }
 }
-
-#start-button {
-	margin-top: 10px;
+@media only screen and (max-width: 1400px) {
+  .layout-main {
+    grid-template-columns: 0.5fr 0.5fr 0.2fr 0.5fr 0.5fr;
+  }
 }
-
-#start-box {
-	margin-top: 50px;
-	padding-bottom: 50px;
-}
-
-.content {
-	min-height: 100%;
-	height: auto;
-	margin-bottom: -200px;
-	padding-bottom: 200px;
-}
-
-.footer {
-	min-height: 160px;
-	width: 100%;
-	background-color: #f7f7f9;
-	padding-top: 10px;
-	padding-bottom: 15px;
-}
-
-.img-circle {
-	width: 80px;
-	height: 80px;
-}
-
-.alert {
-	display: none;
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
-
-.twitter-share-button {
-	position: absolute;
-	margin-left: 10px;
-}
-
-.disclaimer {
-	font-size: 70%;
-}
-
-#___plusone_0 {
-	position: absolute;
-	top: 0;
-	margin-left: 90px !important;
-}
-
-#share-button {
-	display: none;
-	background-color: #3b5998;
-	border: none;
-}
-
-#share-button:hover {
-	background-color: #354c8c;
-}
-
-#share-box{
-    padding-left: 15px;
-} */
