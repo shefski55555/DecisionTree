@@ -1,12 +1,9 @@
 @font-face {
   font-family: "Gill Sans Std";
-  src: url("fonts/GillSansStd-Light.eot?#iefix") format("embedded-opentype"),
-    url("fonts/GillSansStd-Light.woff2") format("woff2"),
-    url("fonts/GillSansStd-Light.woff") format("woff"),
-    url("fonts/GillSansStd-Light.ttf") format("truetype");
+  src: url("https://4433318.fs1.hubspotusercontent-na1.net/hubfs/4433318/Decision%20Tree%20Code/RCDGillSansStd-Light.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
 }
 
 html,
@@ -139,7 +136,7 @@ body {
 }
 
 .title {
-  font-family: "League Spartan";
+  font-family: "League Spartan", "Gill Sans Std";
   font-weight: 300;
   font-style: normal;
   font-weight: bold;

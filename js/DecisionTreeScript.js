@@ -108,10 +108,10 @@ class Question {
 let contactFormUrl = "https://www.youtube.com/watch?v=PSrO55KS6VY"; //this is the link to Rullion Managed Teams contact form quotes around the url are required
 
 let q1 = new Question(
-  "What Problem are you trying to solve?",
+  "Reason for demand?",
   [
-    "You have a clear project with a defined outcome.",
-    "You want a partner who has accountability for delivering all or part of that project.",
+    "A clear project with a defined outcome",
+    "Defined milestones to be met by Rullion",
     "Payment on completion of milestones",
     "A defined work package where Rullion are accountable for delivery",
   ],
@@ -128,7 +128,7 @@ let q2 = new Question(
     "No preference - can be delivered from anywhere unless physical constraints to the work",
     "<b>For example:</b><br>Physical installation",
     "Rullion arrange work, hours and location (in agreement with Client)",
-    "Rullion responsible for selection of the team with a single â€˜Client Introductionâ€™ meeting included in the process",
+    "Rullion responsible for selection of the team with a single ‘Client Introduction’ meeting included in the process",
   ],
   [
     "Decide how and when work is done.",
